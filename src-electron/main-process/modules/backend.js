@@ -21,13 +21,14 @@ export class Backend {
         this.scee = new SCEE()
     }
 
+  
     init(config) {
 
         if(os.platform() == "win32") {
-	    this.config_dir = "C:\\ProgramData\\ryo";
-	    //this.config_dir = path.join(os.homedir(), "ryo");
+	    this.config_dir = "C:\\ProgramData\\ryoo";
+	    //this.config_dir = path.join(os.homedir(), "ryoo");
         } else {
-            this.config_dir = path.join(os.homedir(), ".ryo");
+            this.config_dir = path.join(os.homedir(), ".ryoo");
         }
         if (!fs.existsSync(this.config_dir)) {
             fs.mkdirSync(this.config_dir);
@@ -53,9 +54,9 @@ export class Backend {
 
             daemon: {
                 type: "local_remote",
-                remote_host: "geo.ryo-original.org",
-                remote_port: 12214,
-                p2p_bind_ip: "0.0.0.0",
+                remote_host: "157.230.81.30",
+                remote_port: 19734,
+                p2p_bind_ip: "127.0.0.1",
                 p2p_bind_port: 12213,
                 rpc_bind_ip: "127.0.0.1",
                 rpc_bind_port: 12214,
@@ -73,6 +74,7 @@ export class Backend {
                 log_level: 0
             }
         }
+
 
         this.token = config.token
 
